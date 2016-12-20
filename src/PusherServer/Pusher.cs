@@ -501,7 +501,6 @@ namespace PusherServer
 
         private void ExecuteNotifyAsync(string path, object requestBody, Action<IRestResponse> callback)
         {
-            //_options.RestClient.BaseUrl = _options.GetBaseUrl();
             _options.RestClient.BaseUrl = _options.GetBaseNotificationUrl();
 
             var request = CreateAuthenticatedRequest(Method.POST, path, null, requestBody,true);
@@ -510,7 +509,6 @@ namespace PusherServer
 
         private IRestResponse ExecuteNotify(string path, object requestBody)
         {
-            //_options.RestClient.BaseUrl = _options.GetBaseUrl();
             _options.RestClient.BaseUrl = _options.GetBaseNotificationUrl();
             var request = CreateAuthenticatedRequest(Method.POST, path, null, requestBody, true);
             //Debug.WriteLine(string.Format("Method: {1}{0}Host: {2}{0}Resource: {3}{0}Parameters:{4}",
