@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D81CCD25-73B9-45E4-96BE-5BAD950715AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PusherServer</RootNamespace>
+    <AssemblyName>PusherServer</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\PusherServer.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\PusherServer.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RestSharp, Version=105.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.105.0.1\lib\net35\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthenticationData.cs" />
+    <Compile Include="BatchEvent.cs" />
+    <Compile Include="BatchTriggerBody.cs" />
+    <Compile Include="ChannelsList.cs" />
+    <Compile Include="CryptoHelper.cs" />
+    <Compile Include="DefaultDeserializer.cs" />
+    <Compile Include="DefaultSerializer.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="EventIdData.cs" />
+    <Compile Include="Exceptions\NotifyResponseException.cs" />
+    <Compile Include="Exceptions\TriggerResponseException.cs" />
+    <Compile Include="GetResult.cs" />
+    <Compile Include="IAuthenticationData.cs" />
+    <Compile Include="IDeserializeJsonStrings.cs" />
+    <Compile Include="IGetResult.cs" />
+    <Compile Include="INotifyResult.cs" />
+    <Compile Include="IPusher.cs" />
+    <Compile Include="IPusherOptions.cs" />
+    <Compile Include="IRequestResult.cs" />
+    <Compile Include="ISerializeObjectsToJson.cs" />
+    <Compile Include="ITriggerOptions.cs" />
+    <Compile Include="ITriggerResult.cs" />
+    <Compile Include="IWebHook.cs" />
+    <Compile Include="Notification.cs" />
+    <Compile Include="NotifyBody.cs" />
+    <Compile Include="NotifyResult.cs" />
+    <Compile Include="NotifySubscriberData.cs" />
+    <Compile Include="PresenceChannelData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pusher.cs" />
+    <Compile Include="PusherOptions.cs" />
+    <Compile Include="RawBodySerializer.cs" />
+    <Compile Include="RequestResult.cs" />
+    <Compile Include="TriggerBody.cs" />
+    <Compile Include="TriggerOptions.cs" />
+    <Compile Include="TriggerResult.cs" />
+    <Compile Include="Util\ReadOnlyDictionary.cs" />
+    <Compile Include="ValidationHelper.cs" />
+    <Compile Include="WebHook.cs" />
+    <Compile Include="WebHookData.cs" />
+    <Compile Include="WebHookEvent.cs" />
+    <Compile Include="WebhookLevel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
