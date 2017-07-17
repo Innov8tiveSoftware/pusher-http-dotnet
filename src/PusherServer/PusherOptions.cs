@@ -230,6 +230,13 @@ namespace PusherServer
             return new Uri(baseUrl);
         }
 
+        public Uri GetBaseNotificationUrl()
+        {
+            string baseUrl = (Encrypted ? "https" : "http") + "://" + DEFAULT_NOTIFICATION_REST_API_HOST;
+
+            return new Uri(baseUrl);
+        }
+
         private string GetPort()
         {
             var port = string.Empty;

@@ -1,10 +1,10 @@
-﻿using PusherServer.Exceptions;
+﻿using Newtonsoft.Json;
+using PusherServer.Exceptions;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Web.Script.Serialization;
 
 namespace PusherServer
 {
@@ -21,8 +21,7 @@ namespace PusherServer
             NotifySubscriberData subscriberData = null;
             try
             {
-                JavaScriptSerializer serializer = new JavaScriptSerializer();
-                subscriberData = serializer.Deserialize<NotifySubscriberData>(response.Content);
+                subscriberData = JsonConvert.DeserializeObject<NotifySubscriberData>(response.Content);
             }
             catch (Exception)
             {

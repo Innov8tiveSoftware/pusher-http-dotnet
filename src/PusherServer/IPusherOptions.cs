@@ -73,5 +73,7 @@ namespace PusherServer
         /// </summary>
         /// <returns>The constructed URL</returns>
         Uri GetBaseUrl();
+
+        Uri GetBaseNotificationUrl();
     }
 }
